@@ -1,0 +1,32 @@
+.grid {
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    gap: none;
+    /* Learned cool new trick repeat(x, 1fr) is the same as writing 1fr x amount of times */
+    /*grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(240px, 1fr));*/
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-auto-rows: 4rem;
+    z-index: 98;
+  }
+
+  .black, .white {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: black;
+    height: 100%;
+    width: 100%;
+    transition: all 1000ms;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
