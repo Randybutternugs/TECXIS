@@ -42,7 +42,7 @@ body::-webkit-scrollbar-track {
   background: black;
 }
 
-body::::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background: #8230a4;
 }
 
@@ -157,8 +157,6 @@ body::::-webkit-scrollbar-thumb {
   z-index: 120;
   color: black;
   border-radius: 3px;
-  background-o
-
 }
 
 /*Contact footer*/
