@@ -1,0 +1,304 @@
+/*  HTML and BODY */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin:0;
+}
+
+/*  Fonts */
+
+@font-face {
+  font-family: 'pexico_microregular';
+  src: url('setup_-_pexicomicro-regular-webfont.woff2') format('woff2'),
+       url('setup_-_pexicomicro-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family:'HelveticaNeueLT Pro 65 Md';
+  src: url('HelveticaNeueLTPro-Md.eot');
+src: url('HelveticaNeueLTPro-Md.eot?#iefix') format('embedded-opentype'),
+  url('HelveticaNeueLTPro-Md.woff2') format('woff2'),
+  url('HelveticaNeueLTPro-Md.woff') format('woff'),
+  url('HelveticaNeueLTPro-Md.ttf') format('truetype'),
+  url('HelveticaNeueLTPro-Md.otf') format('opentype'),
+  url('HelveticaNeueLTPro-Md.svg#HelveticaNeueLTPro-Md') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-02DC;
+}
+
+/*  Scrollbar removal */
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #8230a4;
+}
+
+.grid {
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: grid;
+    gap: none;
+    /* Learned cool new trick repeat(x, 1fr) is the same as writing 1fr x amount of times */
+    /*grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(240px, 1fr));*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    z-index: 98;
+  }
+
+  .black, .white {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: black;
+    height: 100%;
+    width: 100%;
+    transition: all 1000ms;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+
+  .logo {
+    grid-column: span 3 / auto;
+    overflow: hidden;
+    background-position: center;
+    object-fit: cover;
+    color: #F5F5F5;
+    text-align: center;
+    font-family: 'pexico_microregular';
+
+  }
+
+  .content {
+    
+    text-align: center;
+  }
+
+  .nav {
+    font-family:'HelveticaNeueLT Pro 65 Md';
+    font-size: 1.5rem;
+  }
+
+  .button {
+    object-fit: cover;
+    color: #F5F5F5;
+    text-align: center;
+    font-family:'HelveticaNeueLT Pro 65 Md';
+    background-color: black;
+    font-size: 1.5rem;
+    -webkit-animation: random 100s infinite;
+    animation: random 100s infinite;
+  }
+
+  @keyframes  random {
+    15% { background-color: #F82A00; } 
+    30% { background-color: yellow; } 
+    45% { background-color: green; } 
+    60% { background-color: blue; }
+    75% { background-color: #f76802; }  
+}
+
+.fa-square-full {
+  color: #F5F5F5;
+  float: left;
+  position: relative;
+  font-size: 1vw;
+}
+
+.fa-square-full > span {
+  color: #F5F5F5;
+  font-family:'HelveticaNeueLT Pro 65 Md';
+  font-size: 1.25vw;
+}
+
+/*Contact footer*/
+.fa-map-marker, .fa-phone, .fa-envelope {
+  color: #F5F5F5;
+  position: relative;
+  float: left;
+  font-size: .75vw;
+}
+
+.fa-map-marker > span, .fa-phone > span, .fa-envelope > span {
+  font-size: .75vw;
+  font-family:'HelveticaNeueLT Pro 65 Md';
+}
+
+/*List stuff for footer*/
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  font-size: 2rem;
+  color: black;
+  height: 100%;
+  width: 100%;
+  transition: all 1000ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+/*BLINKING TEXT CURSOR */
+.blinking-cursor {
+  font-family: 'pexico_microregular';
+  font-size: 2rem;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+  z-index: 120;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #F5F5F5;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #F5F5F5;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #F5F5F5;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #F5F5F5;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #F5F5F5;
+  }
+}
+
+
+
+
+@media (max-width: 414px) {
+
+  .grid {
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: grid;
+    gap: none;
+    /* Learned cool new trick repeat(x, 1fr) is the same as writing 1fr x amount of times */
+    /*grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(240px, 1fr));*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    z-index: 98;
+  }
+
+  .black, .white {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: black;
+    height: 100%;
+    width: 100%;
+    transition: all 1000ms;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+
+  .logo {
+    grid-column: span 3 / auto;
+    grid-row: span 2 / auto;
+    overflow: hidden;
+    background-position: center;
+    object-fit: cover;
+    color: #F5F5F5;
+    text-align: center;
+    font-family: 'pexico_microregular';
+  }
+
+  .nav {
+    font-family:'HelveticaNeueLT Pro 65 Md';
+    font-size: 1.2rem;
+  }
+
+  .fa-square-full {
+    color: #F5F5F5;
+    position: relative;
+    float: left;
+    font-size: .5rem;
+  }
+  
+  .fa-square-full > span {
+    color: #F5F5F5;
+    font-family:'HelveticaNeueLT Pro 65 Md';
+    font-size: .5rem;
+  }
+  
+  /*Contact footer*/
+  .fa-map-marker, .fa-phone, .fa-envelope {
+    color: #F5F5F5;
+    position: relative;
+    float: left;
+    font-size: .65rem;
+  }
+  
+  .fa-map-marker > span, .fa-phone > span, .fa-envelope > span {
+    font-size: .5rem;
+    font-family:'HelveticaNeueLT Pro 65 Md';
+  }
+}
